@@ -22,3 +22,40 @@ console.log(raiz(9));
 // reunitilizar código
 // saudacao("Glenon");
 // saudacao("Maria");
+
+// Declaração de função (function hoisting)
+falaOi();
+function falaOi() {
+  console.log("oi");
+}
+
+// First-class objects (Objectos de primeira classe)
+// function expression
+const souUmDado = function () {
+  console.log("Sou um dado");
+};
+
+function executaFuncao(funcao) {
+  console.log("Vou executar a sua função");
+  funcao();
+}
+executaFuncao(souUmDado);
+
+// Arrow function
+const funcaoArrow = () => {
+  console.log("Sou uma arrow function");
+};
+funcaoArrow();
+
+// dentro do objeto
+const objeto = {
+  falar: function () {
+    console.log("Estou falando ...");
+  },
+  funcao() {
+    console.log("Estou falando ...");
+  },
+};
+
+objeto.funcao();
+objeto.falar();
