@@ -1,61 +1,82 @@
-const raiz = (numero) => numero ** 0.5;
-console.log(raiz(9));
-// const raiz = function (numero) {
-//   return numero ** 0.5;
-// };
+// const raiz = (numero) => numero ** 0.5;
 // console.log(raiz(9));
-// function soma(x = 1, y = 1) {
-//   const resultado = x + y;
-//   return resultado;
-// }
-// console.log(soma());
-// console.log(soma(2, 2));
-// const resultado = soma(2, 2);
-// console.log(resultado);
-
-// function saudacao(nome) {
-//   return `Bom dia ${nome}!`;
+// // const raiz = function (numero) {
+// //   return numero ** 0.5;
+// // };
+// // console.log(raiz(9));
+// // function soma(x = 1, y = 1) {
+// //   const resultado = x + y;
+// //   return resultado;
+// // }
+// // console.log(soma());
+// // console.log(soma(2, 2));
+// // const resultado = soma(2, 2);
+// // console.log(resultado);
+//
+// // function saudacao(nome) {
+// //   return `Bom dia ${nome}!`;
+// // }
+// //
+// // const variavel = saudacao("Glenon");
+// // console.log(variavel);
+// // reunitilizar código
+// // saudacao("Glenon");
+// // saudacao("Maria");
+//
+// // Declaração de função (function hoisting)
+// falaOi();
+// function falaOi() {
+//   console.log("oi");
 // }
 //
-// const variavel = saudacao("Glenon");
-// console.log(variavel);
-// reunitilizar código
-// saudacao("Glenon");
-// saudacao("Maria");
+// // First-class objects (Objectos de primeira classe)
+// // function expression
+// const souUmDado = function () {
+//   console.log("Sou um dado");
+// };
+//
+// function executaFuncao(funcao) {
+//   console.log("Vou executar a sua função");
+//   funcao();
+// }
+// executaFuncao(souUmDado);
+//
+// // Arrow function
+// const funcaoArrow = () => {
+//   console.log("Sou uma arrow function");
+// };
+// funcaoArrow();
+//
+// // dentro do objeto
+// const objeto = {
+//   falar: function () {
+//     console.log("Estou falando ...");
+//   },
+//   funcao() {
+//     console.log("Estou falando ...");
+//   },
+// };
+//
+// objeto.funcao();
+// objeto.falar();
 
-// Declaração de função (function hoisting)
-falaOi();
-function falaOi() {
-  console.log("oi");
+// function funcao() {
+//   let total = 0;
+//   for (let argument of arguments) {
+//     total += argument;
+//   }
+//   console.log(total);
+// }
+//
+// funcao(1, 2, 3, 4, 5);
+function conta(operador, acumulador, ...numeros) {
+  for (let numero of numeros) {
+    if (operador === "+") acumulador += numero;
+    if (operador === "-") acumulador -= numero;
+    if (operador === "/") acumulador /= numero;
+    if (operador === "*") acumulador *= numero;
+  }
+  console.log(acumulador);
 }
 
-// First-class objects (Objectos de primeira classe)
-// function expression
-const souUmDado = function () {
-  console.log("Sou um dado");
-};
-
-function executaFuncao(funcao) {
-  console.log("Vou executar a sua função");
-  funcao();
-}
-executaFuncao(souUmDado);
-
-// Arrow function
-const funcaoArrow = () => {
-  console.log("Sou uma arrow function");
-};
-funcaoArrow();
-
-// dentro do objeto
-const objeto = {
-  falar: function () {
-    console.log("Estou falando ...");
-  },
-  funcao() {
-    console.log("Estou falando ...");
-  },
-};
-
-objeto.funcao();
-objeto.falar();
+conta("+", 0, 20, 30, 40, 50);
