@@ -69,14 +69,64 @@
 // }
 //
 // funcao(1, 2, 3, 4, 5);
-function conta(operador, acumulador, ...numeros) {
-  for (let numero of numeros) {
-    if (operador === "+") acumulador += numero;
-    if (operador === "-") acumulador -= numero;
-    if (operador === "/") acumulador /= numero;
-    if (operador === "*") acumulador *= numero;
+// function conta(operador, acumulador, ...numeros) {
+//   for (let numero of numeros) {
+//     if (operador === "+") acumulador += numero;
+//     if (operador === "-") acumulador -= numero;
+//     if (operador === "/") acumulador /= numero;
+//     if (operador === "*") acumulador *= numero;
+//   }
+//   console.log(acumulador);
+// }
+//
+// conta("+", 0, 20, 30, 40, 50);
+
+// return
+// retorna um valor
+// termina a função
+
+// const soma = (x, y) => {
+//   return x + y;
+// };
+
+// const criaPessoa = (nome, sobrenome) => {
+//   // return { nome: nome, sobrenome: sobrenome }
+//   return { nome, sobrenome }
+// }
+
+// const falaFrase  = (comeco) => {
+//   const falaResto = (resto) => {
+//     return comeco + ' ' + resto
+//   }
+//   return falaResto
+// }
+
+// const fala = falaFrase('olá')
+// const resto = fala('mundo')
+// console.log(resto)
+
+// const duplica = (numero) => {
+//   return numero * 2
+// }
+
+// const triplica = (numero) => {
+//   return numero * 3
+// }
+
+// const quadriplica = (numero) => {
+//   return numero * 4
+// }
+
+const criaMultiplicador = (multiplicador) => {
+  return (numero) => {
+    return numero * multiplicador
   }
-  console.log(acumulador);
 }
 
-conta("+", 0, 20, 30, 40, 50);
+const duplica = criaMultiplicador(2)
+const triplica = criaMultiplicador(3)
+const quadriplica = criaMultiplicador(4)
+
+console.log(duplica(2))
+console.log(triplica(2))
+console.log(quadriplica(2))
