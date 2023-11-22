@@ -47,7 +47,7 @@
 // const nome = nomes.join(" ");
 // console.log(nome);
 //               -6         -5         -4        -3         -2       -1
-const nomes = ["Glenon", "Mateus", "Barbosa", "Araujo", "Maria", "Eduarda"];
+// const nomes = ["Glenon", "Mateus", "Barbosa", "Araujo", "Maria", "Eduarda"];
 
 // nomes.splice(indice,delete,elemento1,elemento2,elemento3)
 // pop
@@ -57,5 +57,14 @@ const nomes = ["Glenon", "Mateus", "Barbosa", "Araujo", "Maria", "Eduarda"];
 // push
 // nomes.splice(nomes.length, 0, "Nayra");
 // unshift
-nomes.splice(0, 0, "Nayra");
-console.log(nomes);
+// nomes.splice(0, 0, "Nayra");
+// console.log(nomes);
+
+const a1 = [1, 2, 3];
+const a2 = [4, 5, 6];
+
+// const a3 = a1.concat(a2);
+// const a3 = a1.concat(a2, [7, 8, 9], "Glenon");
+// ...rest -> spread
+const a3 = [...a1, ...a2, ...[7, 8, 9]];
+console.log(a3);
