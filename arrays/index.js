@@ -60,11 +60,44 @@
 // nomes.splice(0, 0, "Nayra");
 // console.log(nomes);
 
-const a1 = [1, 2, 3];
-const a2 = [4, 5, 6];
+// const a1 = [1, 2, 3];
+// const a2 = [4, 5, 6];
 
 // const a3 = a1.concat(a2);
 // const a3 = a1.concat(a2, [7, 8, 9], "Glenon");
 // ...rest -> spread
-const a3 = [...a1, ...a2, ...[7, 8, 9]];
-console.log(a3);
+// const a3 = [...a1, ...a2, ...[7, 8, 9]];
+// console.log(a3);
+
+// filter, map, reduce
+// const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+
+// function callbackFilter(valor, indice, array) {
+// function callbackFilter(valor) {
+//   return valor > 10;
+// }
+// const maiores10 = numeros.filter(callbackFilter);
+// const maiores10 = numeros.filter((numero) => {
+//   //(numero, indice, array)
+//   numero > 10;
+// });
+// console.log(maiores10);
+
+const pessoas = [
+  { nome: "Luiz", idade: 62 },
+  { nome: "Maria", idade: 23 },
+  { nome: "Eduardo", idade: 55 },
+  { nome: "Letícia", idade: 19 },
+  { nome: "Rosana", idade: 32 },
+  { nome: "Wallace", idade: 47 },
+];
+
+const pessoasComNomeGrande = pessoas.filter((pessoa) => pessoa.nome.length > 5);
+const pessoasComMais50Anos = pessoas.filter((pessoa) => pessoa.idade > 50);
+const pessoasTerminaComA = pessoas.filter((pessoa) =>
+  pessoa.nome.toLowerCase().endsWith("a"),
+);
+
+console.log(pessoasComNomeGrande);
+console.log(pessoasComMais50Anos);
+console.log(pessoasTerminaComA);
