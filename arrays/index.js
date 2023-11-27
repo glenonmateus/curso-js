@@ -70,7 +70,7 @@
 // console.log(a3);
 
 // filter, map, reduce
-// const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
 
 // function callbackFilter(valor, indice, array) {
 // function callbackFilter(valor) {
@@ -89,15 +89,64 @@ const pessoas = [
   { nome: "Eduardo", idade: 55 },
   { nome: "Letícia", idade: 19 },
   { nome: "Rosana", idade: 32 },
-  { nome: "Wallace", idade: 47 },
+  { nome: "Wallace", idade: 70 },
 ];
+//
+// const pessoasComNomeGrande = pessoas.filter((pessoa) => pessoa.nome.length > 5);
+// const pessoasComMais50Anos = pessoas.filter((pessoa) => pessoa.idade > 50);
+// const pessoasTerminaComA = pessoas.filter((pessoa) =>
+//   pessoa.nome.toLowerCase().endsWith("a"),
+// );
+//
+// console.log(pessoasComNomeGrande);
+// console.log(pessoasComMais50Anos);
+// console.log(pessoasTerminaComA);
 
-const pessoasComNomeGrande = pessoas.filter((pessoa) => pessoa.nome.length > 5);
-const pessoasComMais50Anos = pessoas.filter((pessoa) => pessoa.idade > 50);
-const pessoasTerminaComA = pessoas.filter((pessoa) =>
-  pessoa.nome.toLowerCase().endsWith("a"),
-);
+// const numeroEmDobro = numeros.map((numero) => numero * 2);
+// console.log(numeroEmDobro);
 
-console.log(pessoasComNomeGrande);
-console.log(pessoasComMais50Anos);
-console.log(pessoasTerminaComA);
+// const nomes = pessoas.map((pessoa) => pessoa.nome);
+// console.log(nomes);
+
+// const semNomes = pessoas.map((pessoa) => {
+//   delete pessoa.nome;
+//   return pessoa;
+// });
+// const semNomes = pessoas.map((pessoa) => {
+//   return { idade: pessoa.idade };
+// });
+// const semNomes = pessoas.map((pessoa) => ({ idade: pessoa.idade }));
+// console.log(semNomes);
+
+// const adicionaID = pessoas.map((pessoa, indice) => {
+//   pessoa.id = indice;
+//   return pessoa;
+// });
+// const adicionaID = pessoas.map((pessoa, indice) => {
+//   novoPessoas = { ...pessoa };
+//   novoPessoas.id = indice;
+//   return novoPessoas;
+// });
+// console.log(adicionaID);
+// console.log(pessoas);
+
+// const soma = numeros.reduce((acumulador, numero) => {
+//   // acumulador += numero;
+//   if (numero % 2 === 0) {
+//     acumulador += numero;
+//   }
+//   return acumulador;
+// }, 0);
+// console.log(soma);
+
+// const maisVelha = pessoas.reduce((acumulador, pessoa) => {
+//   if (acumulador.idade > pessoa.idade) return acumulador;
+//   return pessoa;
+// });
+// console.log(maisVelha);
+
+// const numerosPares = numeros
+//   .filter((numero) => numero % 2 === 0)
+//   .map((numero) => numero * 2)
+//   .reduce((acumulador, numero) => acumulador + numero);
+// console.log(numerosPares);
