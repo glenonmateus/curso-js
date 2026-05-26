@@ -10,6 +10,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(route);
+app.use(express.static("./src/public"));
 
 app.engine(".html", ejs.__express);
 app.set("views", "./src/views");
