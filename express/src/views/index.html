@@ -1,11 +1,15 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
-  </head>
+<html lang="pt-br">
+  <%- include('includes/head.html'); %>
   <body>
-    <h1>Eu fui renderizado</h1>
+    <section class="container">
+      <h1>Lorem ipsum dolor sit amet <%= localVariable%></h1>
+      <form action="/" method="post">
+        <label>Cliente</label>
+        <input type="text" name="cliente" />
+        <button>Enviar</button>
+      </form>
+    </section>
   </body>
+  <%- include('includes/scripts.html'); %>
 </html>
