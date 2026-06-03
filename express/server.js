@@ -35,6 +35,7 @@ const sessionOptions = session({
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static("./src/public"));
 app.engine(".html", ejs.__express);
 app.set("views", "./src/views");
