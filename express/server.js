@@ -3,10 +3,16 @@ import ejs from "ejs";
 import express from "express";
 import mongoose from "mongoose";
 import route from "./routes.js";
-import { middlewareGlobal } from "./src/middlewares/middleware.js";
+import {
+  csrfMiddleware,
+  checkCsrfError,
+  middlewareGlobal,
+} from "./src/middlewares/middleware.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import flash from "connect-flash";
+import helmet from "helmet";
+import csrf from "csurf";
 
 mongoose
   .connect(process.env.DB_CONNECTION_STRING)
@@ -36,8 +42,13 @@ app.set("view engine", "html");
 //session
 app.use(sessionOptions);
 app.use(flash());
+//security
+app.use(helmet());
+app.use(csrf());
 //middleware - routes
 app.use(middlewareGlobal);
+app.use(csrfMiddleware);
+app.use(checkCsrfError);
 app.use(route);
 
 app.on("ready!", () => {
